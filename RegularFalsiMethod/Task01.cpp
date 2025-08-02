@@ -1,4 +1,6 @@
-#include<bits/stdc++.h>
+#include <iostream>
+#include <cmath>
+#include <iomanip>
 using namespace std;
 
 double f(double x)
@@ -15,7 +17,7 @@ double falsePosition(double a, double b, double tol = 1e-4, int maxIter = 100)
     }
 
     double c = a;
-    double c_old;
+    double c_old = a; // Initialize c_old to a valid value
     int iter = 0;
 
     while (iter < maxIter)
@@ -37,6 +39,9 @@ double falsePosition(double a, double b, double tol = 1e-4, int maxIter = 100)
         c_old = c;
         iter++;
     }
+    // If maximum iterations reached without convergence, return the last computed value
+    cout << "Maximum iterations reached." << endl;
+    return c;
 }
 
 int main() {
